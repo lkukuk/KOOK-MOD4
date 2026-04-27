@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Growth Evaluation - KOOK{% endblock %}
+
+{% block content %}
+<h1>Growth Evaluation</h1>
+
+<form method="POST" action="/growth">
+  <div class="form-group">
+    <label for="company"><strong>Company Name</strong></label><br>
+    <input type="text" name="company" id="company" placeholder="Enter company name" required>
+  </div>
+
+  {% for i, (metric, description) in metrics %}
+    <div class="form-group">
+      <p><strong>{{ metric }}</strong><br><small>{{ description }}</small></p>
+      <label><input type="radio" name="score_{{ i }}" value="5" required> Strong</label><br>
+      <label><input type="radio" name="score_{{ i }}" value="3"> Moderate</label><br>
+      <label><input type="radio" name="score_{{ i }}" value="1"> Weak</label><br>
+    </div>
+  {% endfor %}
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+<a href="/">← Back to Home</a>
+{% endblock %}

@@ -1,0 +1,101 @@
+  :root {
+     --dark-beige: #AA9788;
+     --light-cream: #F1EFE9;
+     --cream: #EFEBE5;
+     --beige: #D4CCC5;
+     --white: #ffffff;
+     --black: #000000;
+   }
+
+@font-face {
+ font-family: 'Panchang';
+ src: url("/static/fonts/Panchang-Bold.ttf") format("truetype");
+ font-weight: bold;
+ font-style: normal;
+}
+
+body {
+  background: #F1EFE9;
+  color: #000000;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding-bottom: 90px;
+  margin: 0;
+}
+
+.container {
+  max-width: 760px;
+  margin: auto;
+  padding: 60px 30px;
+}
+
+h1, h2 {
+  display: flex;
+  font-family: 'Sorts Mill Goudy', serif;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  margin: 14px 0;
+  text-decoration: none;
+  color: black;
+}
+
+/* start of bottom bar */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 40px;
+
+  background: var(--white);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  font-family: monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: var(--dark-beige);
+
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 999;
+}
+/* end of bottom bar */
+
+
+input, button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 14px;
+  border: none;
+  font-family: monospace;
+}
+
+button {
+  background: #AA9788;
+  color: white;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.back {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.disclaimer {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 30px;
+}

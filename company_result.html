@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Company Evaluation Result - KOOK{% endblock %}
+
+
+{% block content %}
+ <h1>Company Evaluation Result</h1>
+
+
+ <p><strong>Company:</strong> {{ company }}</p>
+
+
+ {% for block in evaluations %}
+   <div class="form-group">
+     <p><strong>{{ block.metric }}:</strong></p>
+     <p>{{ block.detail }}</p>
+   </div>
+ {% endfor %}
+
+
+ <div class="form-group">
+   <p><strong>Overall Verdict:</strong></p>
+   <p>{{ verdict }}</p>
+ </div>
+
+
+ <a href="/company">← Evaluate Another Company</a>
+ <a href="/">Back to Home</a>
+{% endblock %}

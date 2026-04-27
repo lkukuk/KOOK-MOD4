@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Your KOOK Memory{% endblock %}
+
+{% block content %}
+<h1>Your Company History</h1>
+{% if companies %}
+  <ul style="list-style: none; padding: 0; font-size: 1.2rem;">
+    {% for company in companies %}
+      <li style="margin: 20px 0;">
+        <a href="{{ url_for('memory_detail', company=company) }}" style="color: #cce6f4; text-decoration: underline;">
+          {{ company }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No saved evaluations yet.</p>
+{% endif %}
+<a href="/" class="back-link">Back to Home</a>
+{% endblock %}

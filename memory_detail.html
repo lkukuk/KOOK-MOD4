@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Memory Details - KOOK{% endblock %}
+
+{% block content %}
+<h1>Company: {{ company }}</h1>
+
+{% if data.growth %}
+  <div class="result-box">
+    <h2>Growth Evaluation</h2>
+    <p><strong>Score:</strong> {{ data.growth.score }} / 75</p>
+    <p><strong>Result:</strong> {{ data.growth.result }}</p>
+  </div>
+{% endif %}
+
+{% if data.company %}
+  <div class="result-box">
+    <h2>Company Evaluation</h2>
+    <ul>
+      {% for eval in data.company.evaluations %}
+        <li><strong>{{ eval.metric }}:</strong> {{ eval.detail }}</li>
+      {% endfor %}
+    </ul>
+    <p><strong>Verdict:</strong> {{ data.company.verdict }}</p>
+  </div>
+{% endif %}
+
+<a href="/memory" class="back-link">← Back to Memory</a>
+{% endblock %}
